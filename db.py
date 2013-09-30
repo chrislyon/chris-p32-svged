@@ -25,3 +25,7 @@ print( "Collections names :", db.collection_names() )
 for d in data.find():
     print( "data : ", d )
 
+## On vire la collection
+db.data.remove()
+
+db_cli.close()
