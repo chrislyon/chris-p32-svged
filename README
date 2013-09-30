@@ -2,3 +2,89 @@ dimanche 29 septembre 2013, 17:43:59 (UTC+0200)
 
 Ceci n'est qu'un test pour voir si cela peut fonctionner
 
+
+lun. sept. 30 13:18:45 CEST 2013
+
+Bon j'ai choisi la bdd, Mongodb semble faite pour cela
+reste a voir ce que cela peut donner.
+
+Donc je veu gérer des documents :
+
+CRUP (Create / Read / Update / Delete)
+mais en plus : 
+- stocker les modifications et accès qq part
+- Locker les documents
+- Gérer des répertoires 
+
+Documents :
+	Documents : fichier format connu donc indexable (txt, pdf, etc...)
+				je peu les transformer en texte puis en extraire les mots 
+	Répertoires : Cela permet de structurer certaine choses
+				  Clients / Fournisseurs etc ...
+				  Des liens devrait pouvoir être gérer (plus tard)
+	Données : fichiers de données dont on ne connait pas le format 
+
+	Dump de la base possible
+
+Mongodb c'est du NoSQL donc avec acces par id
+Mais c'est aussi la notion de Database
+et de collection
+
+Database GED
+Collection
+	Docs 
+		Root /
+			Répertoires:
+				Clients
+				Fournisseurs
+				Etc ...
+			
+
+Documents
+	Nom
+	Meta:
+		Type : DOC/REP/DAT
+		DOC:
+			Type : txt / pdf / odf ...
+		Description:
+		Resumé:
+		Tag:
+		Pieces jointes: id_doc
+		Version
+	
+	Uid/Gid
+
+	## A stocker ou a extraire ?
+	Propriétés Temporales
+		Date Création
+		Date Modif
+		Date Lecture
+		Date Effacement
+
+Users
+	Code
+	Nom
+	Groupe
+	Groupes
+	email
+	password
+
+Groupe
+	Code 
+	Nom
+
+permission
+	id_user ou id_groupe
+	operation (CRUD)
+	autorise : y/n
+
+	object_id / id_user ou groupe 
+	operation
+	autorisé : y/n
+
+
+Historique:
+	id_doc
+	operation
+	date/heure
+	user
