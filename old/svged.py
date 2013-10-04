@@ -17,6 +17,33 @@
 
 import datetime
 
+class Ged(object):
+	"""
+		La classe principale
+	"""
+
+	def __init__(self, nom):
+		self.nom = nom
+		## Connexion a la base de données
+
+	def connect(self, user, password=None):
+		pass
+
+	def create(self):
+		pass
+
+	def update(self):
+		pass
+
+	def read(self):
+		pass
+
+	def delete(self):
+		pass
+
+	def search(self):
+		pass
+
 class Doc(object):
     """
     Les documents, apres c'est une Gestion Electonique des Documents
