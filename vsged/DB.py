@@ -16,38 +16,15 @@ def log(msg="<vide>"):
 	ts = d.strftime("%j %X %f")
 	print("%s : %s" % (ts, msg) )
 
-
-class Horodatage(object):
+class Document(object):
 	"""
-	Classe pour stocker les evenements horodatés
-	"""
-	def __init__(self):
-		self.dh_creation = None
-		self.dh_modification = None
-		self.last_access_read = None
-		self.last_access_write = None
-
-class Proprietaire(object):
-	"""
-	Classe pour stocker les attributs propriétaires
+	La classe de base : Document
 	"""
 	def __init__(self):
-		self.user = None
-		self.group = None
-
-class repertoire(object):
-	"""
-	La classe répertoire
-	est un conteneur
-
-	"""
-	pass
-
-class fichier(object):
-	"""
-	La classe fichier
-	"""
-	pass
+		self.name = ""
+		self.titre = ""
+		self.description = ""
+		self.version = ""
 
 class DB(object):
 	"""
@@ -68,15 +45,9 @@ class DB(object):
 	def __str__(self):
 		return "DB:%s %s" % (self.name, self.db.collection_names())
 
-	def create_dir(self, rep):
+	def create_Doc(self, doc):
 		"""
-		Creation d'un repertoire
-		"""
-		pass
-
-	def create_file(self, fic):
-		"""
-		creation d'un fichier
+		creation d'un document
 		"""
 		pass
 
